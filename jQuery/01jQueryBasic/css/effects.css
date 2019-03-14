@@ -1,0 +1,27 @@
+.box{
+    width: 200px;
+    float: left;
+    border: 2px solid #000;
+    text-align: center;
+    padding: 10px;
+    margin: 5px;
+    min-height: 300px;
+}
+
+p{
+    font-size: 30px;
+    background-color: pink;
+    width: 150px;
+    margin: 10px auto;
+    padding: 10px 0 100px;
+}
+
+button{
+    width: 150px;
+    padding: 8px 16px;
+    background: lightgray;
+    border: none;
+    outline: none;
+    margin: 5px 0;
+}
+    

@@ -1,0 +1,14 @@
+.box{
+    width: 100px;
+    height: 100px;
+    background: #000;
+    position: absolute;
+}
+
+button{
+    margin: 10px;
+    padding: 8px 16px;
+    background: pink;
+    border: none;
+    cursor: pointer;
+}

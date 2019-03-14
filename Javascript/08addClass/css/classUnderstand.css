@@ -1,0 +1,26 @@
+.defaultstyle{
+    background: #000;
+    color: #fff;
+    padding: 20px;
+    width: 200px;
+    height: 80px;
+}
+
+.mystyle{
+    background: #fff;
+    color: #000;
+    box-shadow: 2px 3px 5px black;
+}
+
+.mystyle.something{
+    background: pink;
+}
+
+/* .mystyle:before {
+  font-family: "Font Awesome 5 Free";
+  content: '\f058';
+  font-weight: 900;
+  display: inline-block;
+  margin-right: 5px;
+  font-size: 14px;
+} */

@@ -1,0 +1,30 @@
+.name-list{
+    padding: 0;
+}
+
+.name-list li {
+    list-style: none;
+    display: block;
+    background: pink;
+    padding: 5px 20px;
+    margin-bottom: 2px;
+    position: relative;
+}
+.name-list li:hover{
+    background: red;
+
+}
+.name-list li span{
+    position: absolute;
+    right: 10px;
+    display: inline-block;
+    height: 24px;
+    width: 12px;
+    background: #fff;
+    color: pink;
+    padding: 0 5px;
+
+}
+.name-list li span:hover{
+    cursor: pointer;
+}

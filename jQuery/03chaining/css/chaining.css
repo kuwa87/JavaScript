@@ -1,0 +1,37 @@
+/* 動く */
+/* li[id= "list1"]{
+background-color: pink;
+} */
+
+/* 動かない */
+/* li[id!= "list1"]{
+background-color: pink;
+} */
+
+/* 動く */
+    /* li:not(#list1){
+    background-color: pink;
+    } */
+
+
+
+/* アニメーションが行われれる前にどのくらい待つか */
+/* p{
+    animation-delay: 500;
+} */
+
+.box{
+    border: 2px solid;
+    background-color: pink;
+    width: 300px;
+    height: 300px;
+    float: left;
+    margin: 10px;
+}
+
+#demo4{
+    background: yellow;
+}
+#demo5{
+    background: pink;
+}

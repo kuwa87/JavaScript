@@ -1,0 +1,49 @@
+*{
+    box-sizing: border-box;
+}
+#chat-container{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 240px;
+    height: 64px;
+}
+button,
+#cb-btn{
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    width: 240px;
+    font-size: 16px;
+    margin-bottom: 10px;
+        outline: none;
+
+}
+#cb-btn{
+    position: fixed;
+
+}
+
+
+#cb-btn:hover{
+    cursor: pointer;
+}
+
+textarea{
+    margin-bottom: 20px;
+    width: 100%;
+    resize: none;
+    outline: none;
+}
+
+#chat-content{
+    display: none;
+}
+#chat-container.chat-display{
+    height: 396px;
+}
+.chat-display #chat-content{
+    display: block;
+}
+
