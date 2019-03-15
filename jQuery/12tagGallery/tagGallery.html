@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>jQuery</title>
+  <link rel="stylesheet" href="css/tagGallery.css" />
+  <script src="../common/jQuery/jquery-3.3.1.js"></script>
+
+</head>
+
+<body>
+
+  <!-- the grid: four colums -->
+  <div class="row">
+    <div class="column">
+      <img src="images/cooking.jpg" alt="img01" id="img01">
+    </div>
+    <div class="column">
+      <img src="images/shopping.jpg" alt="img02" id="img02">
+    </div>
+    <div class="column">
+      <img src="images/animal-a.jpg" alt="img03" id="img03">
+    </div>
+    <div class="column">
+      <img src="images/animal-b.jpg" alt="img04" id="img04">
+    </div>
+  </div>
+
+  <!-- the expanding image container -->
+  <div class="container">
+    <!-- close the image -->
+    <span class="closebtn">&times;</span>
+
+    <!-- expanded image -->
+    <img id="expanding" style="width:100%">
+    <!-- image text -->
+    <div id="imgtext"></div>
+
+
+  </div>
+
+  <script src="js/tagGallery.js"></script>
+</body>
+
+</html>
