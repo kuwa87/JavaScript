@@ -2,45 +2,193 @@
 <html>
 
 <head>
-  <title>jQuery</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <script src="js/jquery-3.3.1.js"></script>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Portfolio for Javascript</title>
+  <meta name="description" content="This is a portfolio for Javascript">
+  <meta name="format-detection" content="email=no,telephone=no,address=no">
+
+  <!-- css -->
   <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+
+
+  <!-- jQuery -->
+  <script src="js/jquery-3.3.1.js"></script>
+
 
 </head>
 
 <body>
+  <header>
+    <nav class="clearfix">
+      <div class="nav-left">
+        <h1>
+          <a href="#">
+            <i class="fas fa-fish" class="logo"></i>Aquarium
+          </a>
+        </h1>
+      </div>
+      <div class="nav-right">
+        <ul>
+          <li><a href="#">info</a></li>
+          <li><a href="#">about</a></li>
+          <li><a href="#">event</a></li>
+          <li><a href="#">contact</a></li>
+        </ul>
+      </div>
+    </nav>
 
-  <!-- the grid: four colums -->
-  <div class="row">
-    <div class="column">
-      <img src="images/cooking.jpg" alt="img01" id="img01">
+  </header>
+  <main>
+
+    <!-- slide show 自動では動くけどクリックで動かない状態。slideAutoというJSで動かしている。jQueryは使ってない -->
+    <div class="slideshow-container">
+      <div class="mySlides fade">
+        <!-- <div class="numbertext">1 / 4</div> -->
+        <img src="images/img01.jpg" alt="" style="width:100%">
+        <!-- <div class="text">Caption One</div> -->
+      </div>
+      <div class="mySlides fade">
+        <!-- <div class="numbertext">2 / 4</div> -->
+        <img src="images/img02.jpg" alt="" style="width:100%">
+        <!-- <div class="text">Caption Two</div> -->
+      </div>
+      <div class="mySlides fade">
+        <!-- <div class="numbertext">3 / 4</div> -->
+        <img src="images/img03.jpg" alt="" style="width:100%">
+        <!-- <div class="text">Caption Three</div> -->
+      </div>
+      <div class="mySlides fade">
+        <!-- <div class="numbertext">4 / 4</div> -->
+        <img src="images/img04.jpg" alt="" style="width:100%">
+        <!-- <div class="text">Caption Three</div> -->
+      </div>
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
     </div>
-    <div class="column">
-      <img src="images/shopping.jpg" alt="img02" id="img02">
+
+    <!-- next and previous -->
+    <br>
+
+    <div style="text-align:center" class="dots">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
     </div>
-    <div class="column">
-      <img src="images/animal-a.jpg" alt="img03" id="img03">
-    </div>
-    <div class="column">
-      <img src="images/animal-b.jpg" alt="img04" id="img04">
-    </div>
-  </div>
 
-  <!-- the expanding image container -->
-  <div class="container">
-    <!-- close the image -->
-    <span class="closebtn">&times;</span>
+    <!-- news -->
+    <!-- 開くことはできているけど、閉じることができていない -->
+    <div id="news">
 
-    <!-- expanded image -->
-    <img id="expanding" style="width:100%">
-    <!-- image text -->
-    <div id="imgtext"></div>
+      <!-- news-header -->
+      <div id="news-header">
+        <div class="title-box"><span>NEWS</span>
+          <span id="news-header-title">Seal baby was born!</span>
+          <span id="openClose">more</span>
+
+        </div>
+      </div>
+      <!-- end #news-header -->
+
+      <div class="news-content">
+        <div class="news-text">
+          <h3>news-title</h3>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet hic architecto enim molestias error quos
+            nostrum, porro nam, obcaecati quo voluptate repudiandae aliquid placeat minima maiores nobis? Libero,
+            voluptates est?</p>
+        </div>
+        <div class="news-picture">
+          <img src="images/img02.jpg" alt="">
+        </div>
+      </div>
+      <!-- news end -->
+
+    </div><!-- news -->
+
+    <!-- pick-up -->
+    <section class="back-gray">
+      <div class="wrap">
+        <h2><i class="fas fa-fish" class="logo"></i>Pick Up Event</h2>
+
+        <!-- flex-box -->
+        <div class="row">
+          <div class="col-4" id="myBtn01">
+            <img src="images/pickup01.jpg" alt="">
+            <h3>Event title</h3>
+          </div>
+          <!-- the modal -->
+          <div id="myModal01" class="modal">
+
+            <!-- modal content -->
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <img src="images/pickup01.jpg" alt="">
+              <h3>Event title</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus architecto ratione ipsum, in deserunt
+                alias libero dolorum nihil voluptatibus praesentium, corrupti saepe sit amet dolore accusantium pariatur
+                velit hic quo.</p>
+
+            </div>
+          </div>
+
+          <div class="col-4" id="myBtn02">
+            <img src="images/pickup02.jpg" alt="">
+            <h3>Event title</h3>
+          </div>
+
+          <!-- the modal -->
+          <div id="myModal02" class="modal">
+
+            <!-- modal content -->
+            <div class="modal-content">
+              <span class="close02">&times;</span>
+              <img src="images/pickup02.jpg" alt="">
+              <h3>Event title</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus architecto ratione ipsum, in deserunt
+                alias libero dolorum nihil voluptatibus praesentium, corrupti saepe sit amet dolore accusantium pariatur
+                velit hic quo.</p>
+
+            </div>
+          </div>
+
+          <div class="col-4" id="myBtn03">
+            <img src="images/pickup03.jpg" alt="">
+            <h3>Event title</h3>
+          </div>
+          <!-- the modal -->
+          <div id="myModal03" class="modal">
+
+            <!-- modal content -->
+            <div class="modal-content">
+              <span class="close03">&times;</span>
+              <img src="images/pickup03.jpg" alt="">
+              <h3>Event title</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus architecto ratione ipsum, in deserunt
+                alias libero dolorum nihil voluptatibus praesentium, corrupti saepe sit amet dolore accusantium pariatur
+                velit hic quo.</p>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
 
 
-  </div>
 
-  <script src="js/myscript.js"></script>
+  </main>
+
+
+
+
+  <script src="js/modal.js"></script>
+  <script src="js/openClose.js"></script>
+  <script src="js/slideAuto.js"></script>
+  <script src="js/script.js"></script>
 </body>
 
 </html>
