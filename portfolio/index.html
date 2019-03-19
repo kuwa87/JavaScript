@@ -8,6 +8,8 @@
   <meta name="description" content="This is a portfolio for Javascript">
   <meta name="format-detection" content="email=no,telephone=no,address=no">
 
+  <!-- font -->
+  <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
   <!-- css -->
   <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
@@ -20,7 +22,7 @@
 </head>
 
 <body>
-  <header>
+  <header id="navbar">
     <nav class="clearfix">
       <div class="nav-left">
         <h1>
@@ -30,11 +32,16 @@
         </h1>
       </div>
       <div class="nav-right">
-        <ul>
-          <li><a href="#">info</a></li>
-          <li><a href="#">about</a></li>
-          <li><a href="#">event</a></li>
-          <li><a href="#">contact</a></li>
+        <div id="nav-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul id="nav-menu">
+          <li><a href="#news">News</a></li>
+          <li><a href="#pickup">PickUp</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#access">Access</a></li>
         </ul>
       </div>
     </nav>
@@ -64,8 +71,8 @@
         <img src="images/img04.jpg" alt="" style="width:100%">
         <!-- <div class="text">Caption Three</div> -->
       </div>
-      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      <a class="prev">&#10094;</a>
+      <a class="next">&#10095;</a>
 
     </div>
 
@@ -85,7 +92,8 @@
 
       <!-- news-header -->
       <div id="news-header">
-        <div class="title-box"><span>NEWS</span>
+        <div class="title-box">
+          <h2>NEWS</h2>
           <span id="news-header-title">Seal baby was born!</span>
           <span id="openClose">more</span>
 
@@ -109,15 +117,15 @@
     </div><!-- news -->
 
     <!-- pick-up -->
-    <section class="back-gray">
+    <section class="back-gray" id="pickup">
       <div class="wrap">
-        <h2><i class="fas fa-fish" class="logo"></i>Pick Up Event</h2>
+        <h2><i class="fas fa-fish" class="logo"></i>Pick Up</h2>
 
         <!-- flex-box -->
         <div class="row">
           <div class="col-4" id="myBtn01">
             <img src="images/pickup01.jpg" alt="">
-            <h3>Event title</h3>
+            <h3>Title</h3>
           </div>
           <!-- the modal -->
           <div id="myModal01" class="modal">
@@ -126,7 +134,7 @@
             <div class="modal-content">
               <span class="close">&times;</span>
               <img src="images/pickup01.jpg" alt="">
-              <h3>Event title</h3>
+              <h3>Title</h3>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus architecto ratione ipsum, in deserunt
                 alias libero dolorum nihil voluptatibus praesentium, corrupti saepe sit amet dolore accusantium pariatur
                 velit hic quo.</p>
@@ -136,7 +144,7 @@
 
           <div class="col-4" id="myBtn02">
             <img src="images/pickup02.jpg" alt="">
-            <h3>Event title</h3>
+            <h3>Title</h3>
           </div>
 
           <!-- the modal -->
@@ -177,14 +185,106 @@
 
       </div>
     </section>
+    <section class="back-none" id="events">
+      <div class="wrap">
+        <h2><i class="fas fa-fish" class="logo"></i>Events</h2>
 
+        <div class="tab">
+          <button class="tablinks" onclick="openCity(event,'New')" id="defaultOpen">New Events</button>
+          <button class="tablinks" onclick="openCity(event,'Past')">Past Events</button>
+          <button class="tablinks" onclick="openCity(event,'Calendar')">Event Calendar</button>
+        </div>
 
+        <!-- tab content -->
+        <div id="New" class="tabcontent">
+          <h3>New Events</h3>
+          <ul class="event-list">
+            <li>
+              <h4>Event title<span class="date">2019.04.01</span>
+              </h4>
+              <div class="event-content">
+                <div class="event-img">
+                  <img src="images/img01.jpg" alt="">
+                </div>
+                <p class="event-p">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur optio quibusdam ex!
+                  Itaque,
+                  consequuntur. Vel, aspernatur ducimus! Tempore vitae facere quas eius corrupti, architecto quae
+                  dignissimos aspernatur tenetur voluptatibus reiciendis!</p>
+              </div>
 
+            </li>
+            <li>
+              <h4>Event title<span class="date">2019.04.01</span>
+              </h4>
+              <div class="event-content">
+                <div class="event-img">
+                  <img src="images/img01.jpg" alt="">
+                </div>
+                <p class="event-p">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur optio quibusdam ex!
+                  Itaque,
+                  consequuntur. Vel, aspernatur ducimus! Tempore vitae facere quas eius corrupti, architecto quae
+                  dignissimos aspernatur tenetur voluptatibus reiciendis!</p>
+              </div>
+
+            </li>
+          </ul>
+        </div>
+
+        <div id="Past" class="tabcontent">
+          <h3>Past Events</h3>
+          <ul class="event-list">
+            <li>
+              <h4>Event title<span class="date">2019.04.01</span>
+              </h4>
+              <div class="event-content">
+                <div class="event-img">
+                  <img src="images/img01.jpg" alt="">
+                </div>
+                <p class="event-p">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur optio quibusdam ex!
+                  Itaque,
+                  consequuntur. Vel, aspernatur ducimus! Tempore vitae facere quas eius corrupti, architecto quae
+                  dignissimos aspernatur tenetur voluptatibus reiciendis!</p>
+              </div>
+
+            </li>
+            <li>
+              <h4>Event title<span class="date">2019.04.01</span>
+              </h4>
+              <div class="event-content">
+                <div class="event-img">
+                  <img src="images/img01.jpg" alt="">
+                </div>
+                <p class="event-p">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur optio quibusdam ex!
+                  Itaque,
+                  consequuntur. Vel, aspernatur ducimus! Tempore vitae facere quas eius corrupti, architecto quae
+                  dignissimos aspernatur tenetur voluptatibus reiciendis!</p>
+              </div>
+
+            </li>
+          </ul>
+        </div>
+
+        <div id="Calendar" class="tabcontent">
+          <h3>Event Calendar</h3>
+          <img src="images/calendar.png" alt="">
+        </div>
+      </div>
+    </section>
+    <iframe id="access"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3194.8414366828492!2d137.38595691448538!3d36.798351975504985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5ff7a4bd301526a7%3A0xbe46871f4ae41060!2z6a2a5rSl5rC05peP6aSo!5e0!3m2!1sja!2sph!4v1552805665715"
+      frameborder="0" style="border:0" allowfullscreen></iframe>
   </main>
 
+  <footer>
+    <small>&copy; Aquarium 2019</small>
+  </footer>
 
 
 
+  <script src="js/scrollNav.js"></script>
+  <script src="js/humburger.js"></script>
+  <script src="js/smoothscroll.js"></script>
+  <script src="js/tabs.js"></script>
   <script src="js/modal.js"></script>
   <script src="js/openClose.js"></script>
   <script src="js/slideAuto.js"></script>
