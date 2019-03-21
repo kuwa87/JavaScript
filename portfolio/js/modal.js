@@ -1,3 +1,4 @@
+
 // 1
 // get the modal
 var modal = document.getElementById('myModal01');
@@ -12,12 +13,15 @@ var span = document.getElementsByClassName("close")[0];
 
 //when the user clicks the button, open the modal
 btn.addEventListener('click', function () {
-    modal.style.display = "block"
+    modal.style.display = "block";
+    $('body').css('overflow', 'hidden');
 }, false);
 
 // when the user clicks on<span>(x), close the modal
 span.addEventListener('click', function () {
     modal.style.display = "none";
+    $('body').css('overflow', 'auto');
+
 }, false);
 
 //when the user clicks anywhere outside of the modal, close it 
@@ -42,12 +46,16 @@ var span02 = document.getElementsByClassName("close02")[0];
 
 //when the user clicks the button, open the modal
 btn02.addEventListener('click', function () {
-    modal02.style.display = "block"
+    modal02.style.display = "block";
+    $('body').css('overflow', 'hidden');
+
 }, false);
 
 // when the user clicks on<span>(x), close the modal
 span02.addEventListener('click', function () {
     modal02.style.display = "none";
+    $('body').css('overflow', 'auto');
+
 }, false);
 
 //when the user clicks anywhere outside of the modal, close it 
@@ -71,17 +79,23 @@ var span03 = document.getElementsByClassName("close03")[0];
 
 //when the user clicks the button, open the modal
 btn03.addEventListener('click', function () {
-    modal03.style.display = "block"
+    modal03.style.display = "block";
+    $('body').css('overflow', 'hidden');
+
 }, false);
 
 // when the user clicks on<span>(x), close the modal
 span03.addEventListener('click', function () {
     modal03.style.display = "none";
+    $('body').css('overflow', 'auto');
+
 }, false);
 
 //when the user clicks anywhere outside of the modal, close it 
 window.onclick = function (event) {
     if (event.target == modal03) {
         modal03.style.display = "none";
+        $('body').css('overflow', 'auto');
+
     }
 }

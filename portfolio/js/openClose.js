@@ -1,19 +1,29 @@
 $(function () {
     $('#openClose').click(function () {
 
+        if (($('.news-content').css('display') == 'flex') || ($('.news-content').css('display') == 'block')) {
 
-        if (x.matches) { // If media query matches
             $(".news-content").css({
-                display: 'block'
+                display: 'none'
             });
+
+
         } else {
-            $(".news-content").css({
-                display: 'flex'
-            });
-        }
 
+            if (x.matches) { // If media query matches
+                $(".news-content").css({
+                    display: 'block'
+                });
+            } else {
+                $(".news-content").css({
+                    display: 'flex'
+                });
+            }
+
+        }
 
     });
 
-    var x = window.matchMedia("(max-width: 767px)")
+    var x = window.matchMedia("(max-width: 767px)");
+    // var y = ".news-content";
 });
