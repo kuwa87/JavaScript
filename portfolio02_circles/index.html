@@ -9,7 +9,6 @@
   <meta name="format-detection" content="email=no,telephone=no,address=no">
 
   <!-- font -->
-  <!-- <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet"> -->
   <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
   <!-- css -->
   <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
@@ -17,12 +16,30 @@
 
 
   <!-- jQuery -->
-  <script src="js/jquery-3.3.1.js"></script>
 
+  <script src="http://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+    crossorigin="anonymous"></script>
+  <!-- <script src="js/jquery-3.3.1.js"></script> -->
+  <!-- <script src="js/loader.js"></script> -->
+  <script>
+    $(window).load(function () {
+
+      $('.loader').delay('2000').fadeOut('slow');
+
+    });
+
+  </script>
 
 </head>
 
 <body>
+  <div class="loader">
+    <div class="load-img">
+      <img src="images/load.png" alt="">
+      <img src="images/jellyfish.svg" alt="">
+    </div>
+
+  </div>
   <header id="navbar">
     <nav class="clearfix">
       <div class="nav-right">
@@ -38,41 +55,174 @@
           <li><a href="#access">Access</a></li>
         </ul>
       </div>
+
     </nav>
+    <svg height="207.406" viewBox="0 0 454 207.406" width="454" xmlns="http://www.w3.org/2000/svg" class="shape">
+      <path
+        d="m1574 194s43.21 21.368 107 48c104.2 43.505 164.49 106.349 189 130 60.87 58.731 164.59 93.624 181 89 .55-43.485 0-266 0-266z"
+        fill="#f075b3" fill-rule="evenodd" transform="translate(-1574 -254)" />
+      <!-- <style>
+        .shape {
+          animation-name: bigger;
+          animation-iteration-count: infinite;
+        }
+
+        @keyframes bigger {
+          0% {
+            transform: scale(1);
+
+          }
+
+          100% {
+            transform: scale(2);
+
+          }
+        }
+      </style> -->
+
+    </svg>
   </header>
-  <h1>Creatures of the sea</h1>
-
   <main>
+    <div class="intro">
+      <h1>Creatures of the sea</h1>
+      <h2 class="basic-heading heading-right">jellyfish</h2>
+      <a href="#about" class="scroll"><span id="scroll-a">Dive into the sea </span><span
+          id="scroll-b">&#62;&#62;</span></a>
+      <svg height="207.406" viewBox="0 0 454 207.406" width="454" xmlns="http://www.w3.org/2000/svg" class="shape02">
+        <path
+          d="m1574 194s43.21 21.368 107 48c104.2 43.505 164.49 106.349 189 130 60.87 58.731 164.59 93.624 181 89 .55-43.485 0-266 0-266z"
+          fill="#f075b3" fill-rule="evenodd" transform="translate(-1574 -254)" />
+      </svg>
+
+    </div>
 
 
-    <!-- slide show 自動では動くけどクリックで動かない状態。slideAutoというJSで動かしている。jQueryは使ってない -->
-    <!-- <div class="slideshow-container">
+    <!-- slide show 高さの調整がまだ。min-heightを90vhにしている。狭い高さでみたとき、SPの時などの調整が必要 -->
+    <div class="slideshow-container">
       <div class="mySlides fade">
-        <img src="images/img01.jpg" alt="" style="width:100%">
+        <div class="img-wrap">
+          <img src="images/img01.jpg" alt="" class="slideImg">
+        </div>
       </div>
       <div class="mySlides fade">
-        <img src="images/img02.jpg" alt="" style="width:100%">
+        <div class="img-wrap">
+          <img src="images/img02.jpg" alt="" class="slideImg">
+        </div>
       </div>
       <div class="mySlides fade">
-        <img src="images/img03.jpg" alt="" style="width:100%">
+        <div class="img-wrap">
+          <img src="images/img03.jpg" alt="" class="slideImg">
+        </div>
       </div>
-      <div class="mySlides fade">
-        <img src="images/img04.jpg" alt="" style="width:100%">
-      </div>
-    </div> -->
+    </div>
 
+    <!-- section -->
+    <section class="about">
+      <div class="parallax">
+      </div>
+
+      <div class="contents" id="about">
+        <h2 class="basic-heading heading-center">About</h2>
+        <p>Jellyfish or sea jellies are the informal common names given to the medusa-phase of certain gelatinous
+          members
+          of the
+          subphylum Medusozoa, a major part of the phylum Cnidaria.</p>
+      </div>
+
+
+    </section>
+    <section class="hisory">
+      <div class="parallax parallax02">
+        <div class="empty"></div>
+      </div>
+
+      <div class="contents" id="history">
+        <h2 class="basic-heading heading-left">History</h2>
+        <p>Jellyfish or sea jellies are the informal common names given to the medusa-phase of certain gelatinous
+          members
+          of the
+          subphylum Medusozoa, a major part of the phylum Cnidaria.</p>
+
+      </div>
+    </section>
+    <section class="hisory">
+      <div class="parallax parallax02">
+        <div class="empty"></div>
+      </div>
+
+      <div class="contents" id="history">
+        <h2 class="basic-heading heading-right">Ecology</h2>
+        <p>Jellyfish or sea jellies are the informal common names given to the medusa-phase of certain gelatinous
+          members
+          of the
+          subphylum Medusozoa, a major part of the phylum Cnidaria.</p>
+
+      </div>
+    </section>
+    <section class="variety">
+      <div class="contents" id="variety">
+        <h2 class="basic-heading heading-center">Variety</h2>
+        <!-- flex-box -->
+        <div class="row">
+          <div class="col-4">
+            <div class="img-wrap">
+              <img src="images/kind01.jpg" alt="">
+            </div>
+            <h3>Aurelia sp.</h3>
+          </div>
+          <div class="col-4">
+            <div class="img-wrap">
+              <img src="images/kind02.jpg" alt="">
+            </div>
+            <h3>Name</h3>
+          </div>
+          <div class="col-4">
+            <div class="img-wrap">
+              <img src="images/kind03.jpg" alt="">
+            </div>
+            <h3>Name</h3>
+          </div>
+          <div class="col-4">
+            <div class="img-wrap">
+              <img src="images/kind02.jpg" alt="">
+            </div>
+            <h3>Aurelia sp.</h3>
+          </div>
+          <div class="col-4">
+            <div class="img-wrap">
+              <img src="images/kind03.jpg" alt="">
+            </div>
+            <h3>Name</h3>
+          </div>
+          <div class="col-4">
+            <div class="img-wrap">
+              <img src="images/kind01.jpg" alt="">
+            </div>
+            <h3>Name</h3>
+          </div>
+
+        </div>
+
+    </section>
   </main>
 
 
   <footer>
+    <svg height="207.406" viewBox="0 0 454 207.406" width="454" xmlns="http://www.w3.org/2000/svg" class="shape02">
+      <path
+        d="m1574 194s43.21 21.368 107 48c104.2 43.505 164.49 106.349 189 130 60.87 58.731 164.59 93.624 181 89 .55-43.485 0-266 0-266z"
+        fill="#f075b3" fill-rule="evenodd" transform="translate(-1574 -254)" />
+    </svg>
     <small>&copy; Aquarium 2019</small>
+
   </footer>
 
 
 
+  <script src="js/typewriter.js"></script>
   <script src="js/humburger.js"></script>
-  <!-- <script src="js/smoothscroll.js"></script>
-  <script src="js/slideAuto.js"></script> -->
+  <script src="js/smoothscroll.js"></script>
+  <script src="js/slideAuto.js"></script>
 </body>
 
 </html>

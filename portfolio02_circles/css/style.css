@@ -62,20 +62,18 @@ li{
 ===================== */
 
 header{
-    background: #f075b3;
-    padding: 10px 0;
-    width: 90px;
-    z-index: 100;
+    /* background: #f075b3; */
+    z-index: 110;
     position: fixed;
     top: 0;
     right: 0;
-    min-height: 70px;
+    width: 100%;
 }
 
 nav{
-  width: 94%;
+  /* width: 94%;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 auto; */
 }
 
 .nav-right ul{
@@ -89,14 +87,14 @@ nav{
   display: block;
   padding: 1em;
   color: white;
-  font-weight: bold;
   font-family: 'Julius Sans One', sans-serif;
+  text-align: center;
+  font-size: 2rem;
 }
 @media screen and (max-width:767px) { 
 
 header{
-    padding: 10px 0 24px;
-    background: #f075b3;
+    padding: 0 0 24px;
 
 }
 }
@@ -170,16 +168,90 @@ header{
 }
 
 #nav-menu{
-  display: none;
-}
-#nav-menu.open{
-  display: block;
   padding-top: 50px;
+  position: relative;
+  transition: all 5s;
+  opacity: 0;
+}
+
+#nav-menu.open{
+  opacity: 1;
+  transition: opacity 5s;
+}
+
+#navbar:before{
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  -moz-transition: top, 4s;
+  -o-transition: top, 4s;
+  -webkit-transition: top, 4s;
+  transition: top, 4s;
+  -moz-transform: skewY(40deg);
+  -ms-transform: skewY(40deg);
+  -webkit-transform: skewY(40deg);
+  transform: skewY(40deg);
+  position: absolute;
+  top: -360px;
+  left: 0;
+  background-color: rgba(240, 117, 179, 1);
+  content: "　";
+  width: 100%;
+  height: 0px;
+  z-index: -2;
+  border-radius: 60% 0 20% 80% / 50% 0 10% 70%; 
+
 
 }
+/* refarence */
+/* https://12px.com/blog/2014/07/shutter-button/ */
+
+
+#navbar.open:before{
+  top: 0px;
+  height: 1500px;
+  transform: skewY(0);
+  border-radius: 0;
+}
+
+
 #nav-menu li{
   width: 100%;
 }
+
+/* nav svg */
+
+svg{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 0;
+    width: 250px;
+    height: 120px;
+    }
+
+
+#nav-icon{
+  z-index: 100;
+}
+
+.shape02{
+    transform: rotate(180deg);
+    bottom: -90px;
+    left: 0;
+    top: auto;
+    right: auto;
+
+}
+
+@media screen and (max-width:767px) { 
+
+
+
+}
+
 /* =====================
   headings
 ===================== */
@@ -187,7 +259,449 @@ header{
 h1{
 font-family: 'Inconsolata', monospace;
 font-weight: normal;
-margin: 10px;
+margin: 20px;
 font-size: 3vw;
 }
 
+.basic-heading{
+  font-family: 'Inconsolata', monospace;
+  font-weight: normal;
+  margin: 10px;
+  font-size: 4vw;
+  position: relative;
+  margin-bottom: 54px;
+}
+
+.basic-heading:after{
+    content: '';
+    height: 1px;
+    width: 242px;
+    background-color: rgba(240, 117, 179, 1);
+    position: absolute;
+    bottom: -20px;
+    right: -10px;
+}
+.intro .basic-heading{
+  top: 72vh;
+  z-index: 100;
+
+}
+.basic-heading.heading-right{
+  text-align: right;
+  padding-right: 13vh;
+}
+
+.basic-heading.heading-center:after{
+    width: 40px;
+    left: calc(50% - 20px);
+}
+
+.basic-heading.heading-left{
+    text-align: right;
+    width: 242px;
+    margin-left: -20px;
+}
+.basic-heading.heading-right{
+    margin-right: -20px;
+}
+.intro .basic-heading.heading-right{
+    margin-right: 0;
+    right: 0;
+}
+.basic-heading.heading-left:after{
+    left: 0;
+    right: auto;
+}
+
+h3{
+    font-family: 'Inconsolata', monospace;
+
+}
+
+@media screen and (max-width:767px) { 
+h1{
+  font-size: 1.6rem;
+}
+.basic-heading{
+  font-size: 2.2rem;
+}
+}
+
+
+/* =====================
+  slideshow container
+===================== */
+
+.slideshow-container{
+    /* max-width: 1000px; */
+    position: relative;
+    margin: -90vh auto 10vh;
+    width: 80%;
+}
+
+/* Hide the images by default */
+.mySlides{
+    display: none;
+}
+
+/* next & previous buttons */
+.prev,
+.next{
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* position the "nextbutton" to the right */
+.next{
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* hover see through */
+.prev:hover,
+.next:hover{
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* caption text */
+.text{
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+/* number text (1/3etc)*/
+.numbertext{
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* dots bullets indicators */
+.dots{
+  margin-top: -70px;
+  position: relative;
+  margin-bottom: 29px;
+}
+.dot{
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover{
+    background-color: #717171;
+}
+
+/* fading animation */
+.fade{
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+.fade .img-wrap{
+  /* border-radius: 37% 47% 42% 64%; */
+  transform: rotate(-6deg);
+  margin: -16px auto;
+  animation: uneune 3s linear infinite;
+  overflow: hidden;
+  width: 90%;
+  max-height: 80vh;
+
+}
+
+@keyframes uneune {
+
+  0% {
+    border-radius: 60% 50% 70% 80% / 50% 60% 70% 70%; 
+  
+  }
+  25% {
+    border-radius: 70% 60% 60% 90% / 70% 80% 55% 90%; 
+  }
+
+  50% {
+    border-radius: 60% 44% 70% 60% / 40% 60% 50% 60%; 
+  }
+
+  75% {
+    border-radius: 90% 60% 46% 70% / 70% 50% 80% 46%; 
+  }
+
+  100% {
+    border-radius: 60% 50% 70% 80% / 50% 60% 50% 70%; 
+  }
+}
+
+
+@-webkit-keyframes fade{
+    from{
+        opacity: .4
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes fade{
+    from{
+        opacity: .4
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.fade .img-wrap .slideImg{
+    transform: rotate(6deg);
+    width: 170%;
+    max-width: 170%;
+    display: block;
+    position: relative;
+    left: -20px;
+    top: 8px;
+    animation: leftslide 3s linear infinite;
+    /* animation: topslide 3s linear infinite; */
+    
+}
+@-webkit-keyframes leftslide{
+  from{
+    left: -20px;
+    top: 8px;
+
+  }
+  to{
+    left: -40px;
+    top: -8px;
+
+  }
+
+}
+@keyframes leftslide{
+  from{
+    left: 0;
+    top: 8px;
+  }
+  to{
+    left: -20px;
+    top: -8px;
+  }
+
+}
+
+
+@media screen and (max-width:767px) { 
+  .slideshow-container{
+    margin: -90vh auto 10vh;
+    width: 83%;
+  }
+
+
+.fade .img-wrap {
+  border-radius: 0;
+  transform: none;
+  animation: none;
+  width: 93%;
+}
+.fade .img-wrap .slideImg{
+  transform: none;
+}
+}
+/* scroll */
+
+.scroll {
+  font-family: 'Inconsolata', monospace;
+    position: absolute;
+    writing-mode: vertical-rl;
+    -ms-writing-mode: tb-rl;
+    bottom: 20px;
+    left: 20px;
+    font-size: 3vh;
+    height: 34vh;
+    color: #000;
+}
+
+.intro{
+  height: 100vh;
+}
+
+/* parallax */
+
+
+.parallax {
+    position: relative;
+    background-image: url('../images/back01.jpeg');
+    height: 300px; 
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.parallax02 {
+    position: relative;
+    background-image: url('../images/back02.jpeg');
+    height: 150px; 
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.contents {
+    position: relative;
+    z-index: 1;
+    background: #555;
+    background: #fff;
+    padding: 100px 20px;
+    text-align :center;
+    padding: 100px 20px 150px;
+    }
+
+    .contents p{
+      text-align: left;
+      padding: 0px 10%;
+    }
+
+  section.about{
+    margin-top: 110px;
+  }
+
+  section.variety .contents{
+    background-color: #f2f2f2;
+  }
+
+  /* =====================
+  basic flexbox
+===================== */
+
+
+.col-4 h3{
+  font-weight: normal;
+  padding: 10px 0; 
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.col-4{
+  width: 31%;
+  word-wrap: break-word;
+  cursor: pointer;
+  padding: 20px;
+  margin: 1%;
+
+}
+.col-4 .img-wrap {
+    height: 140px;
+    overflow: hidden;
+}
+.col-4 .img-wrap img{
+  width: 100%;
+}
+@media screen and (max-width:767px) { 
+  .row{
+    display: block;
+  }
+
+  .col-4{
+    width: 100%;
+    margin: 0 auto 20px;
+    max-width: 440px;
+  }
+
+    .col-4 img{
+      width: 100%;
+    }
+
+
+}
+
+/* footer */
+
+footer{
+  position: relative;
+  text-align: center;
+    margin-top: -90px;
+    z-index: 200;
+}
+
+small{
+      
+  position: absolute;
+    bottom: 0;
+    margin: -70px 0;
+}
+
+/* loader */
+.loader{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  background: #fff;
+}
+
+/* loading */
+
+
+
+.load-img{
+  margin: calc(50vh - 100px) auto;
+  text-align: center;
+
+}
+
+.loader img{
+  display: block;
+  width: 100px;
+  margin: 0 auto;
+  transition: all 0.6s ease;
+}
+.loader img:first-child{
+  margin-bottom: 20px;
+}
+
+.loader img:first-child{
+  animation: loading 1.5s linear infinite;
+}
+
+@keyframes loading {
+  from {
+    transform: rotate(-15deg);
+  }
+  50%{
+    transform: rotate(15deg);
+  }
+  to {
+    transform: rotate(-15deg);
+    /* transform-origin: 50% 50%; */
+  }
+}

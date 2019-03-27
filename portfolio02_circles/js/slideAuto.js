@@ -1,63 +1,10 @@
 var slideIndex = 0;
 showSlides();
-var slides, dots;
-
-function plusSlides(position) {
-
-    // var slides = document.getElementsByClassName('mySlides');
-    // var dots = document.getElementsByClassName('dot');
-
-    slideIndex += position;
-
-    if (slideIndex > slides.length) {
-        slideIndex = 1
-    } else if (slideIndex < 1) {
-        slideIndex = slides.length
-    }
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += " active";
-
-}
-
-function currentSlide(index) {
-
-    // var slides = document.getElementsByClassName('mySlides');
-    // var dots = document.getElementsByClassName('dot');
-
-
-    if (index > slides.length) {
-        index = 1
-
-    }
-    else if (index < 1) {
-        index = slides.length
-
-    }
-
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-
-    }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-
-    }
-
-    slides[index - 1].style.display = "block";
-    dots[index - 1].className += " active";
-}
-
 
 function showSlides() {
     var i;
-    slides = document.getElementsByClassName('mySlides');
-    dots = document.getElementsByClassName('dot');
+    var slides = document.getElementsByClassName('mySlides');
+    // var slideImg = document.getElementsByClassName('slideImg');
 
     for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
@@ -70,14 +17,10 @@ function showSlides() {
 
     }
 
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-
-    }
-
     slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += " active";
+    // slideImg.style.left = "-60px";
 
-    setTimeout(showSlides, 5000);
+
+    setTimeout(showSlides, 2000);
 
 }

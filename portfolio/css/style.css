@@ -56,13 +56,17 @@ li{
 
 /* header */
 header{
-  background:  rgba(0,0,0,.5);
+  background-color:  #fff;
+  /* background-color:  rgba(0,0,0,.5); */
   padding: 10px 0;
   width: 100%;
   z-index: 100;
   position: fixed;
   top: 0;
-
+  -webkit-transition: background-color .5s;
+  -moz-transition: background-color .5s;
+  -o-transition: background-color .5s;
+  transition: background-color .5s;
 }
 
 nav{
@@ -78,11 +82,11 @@ h1{
 }
 
 h1 a{
-      color: #fff;
+      color: #000;
 
 }
 h1 i{
-      color: #fff;
+      color: #000;
       font-size: 2.3rem;
       margin-right: 5px;
 
@@ -101,7 +105,7 @@ h1 i{
 .nav-right a{
   display: block;
   padding: 1em;
-  color: white;
+  color: #000;
   font-weight: bold;
   font-family: 'Julius Sans One', sans-serif;
 }
@@ -109,9 +113,13 @@ h1 i{
 
 header{
     padding: 10px 0 24px;
-    background: #000;
-
+    background-color: #fff;
+    /* -webkit-transition: background-color .5s;
+    -moz-transition: background-color .5s;
+    -o-transition: background-color .5s;
+    transition: background-color .5s; */
 }
+
 }
 /* =====================
   slideshow container
@@ -120,7 +128,7 @@ header{
 .slideshow-container{
     /* max-width: 1000px; */
     position: relative;
-    margin: 0 auto;
+    margin: 70px auto 0;
 }
 
 /* Hide the images by default */
@@ -636,7 +644,7 @@ footer{
   position: absolute;
   height: 3px;
   width: 100%;
-  background: #fff;
+  background: #000;
   border-radius: 9px;
   opacity: 1;
   left: 0;
