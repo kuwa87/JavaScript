@@ -70,19 +70,6 @@ header{
     width: 100%;
 }
 
-nav{
-  /* width: 94%;
-  max-width: 1200px;
-  margin: 0 auto; */
-}
-
-.nav-right ul{
- display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-end;
-  margin: 0;
-}
-
 .nav-right a{
   display: block;
   padding: 1em;
@@ -172,11 +159,13 @@ header{
   position: relative;
   transition: all 5s;
   opacity: 0;
+  margin-top: -100vh;
 }
 
 #nav-menu.open{
   opacity: 1;
   transition: opacity 5s;
+  margin-top: 0;
 }
 
 #navbar:before{
@@ -248,7 +237,9 @@ svg{
 
 @media screen and (max-width:767px) { 
 
-
+svg{
+  width: 180px;
+}
 
 }
 
@@ -279,7 +270,7 @@ font-size: 3vw;
     background-color: rgba(240, 117, 179, 1);
     position: absolute;
     bottom: -20px;
-    right: -10px;
+    right: 0;
 }
 .intro .basic-heading{
   top: 72vh;
@@ -476,11 +467,11 @@ h1{
 
 .fade .img-wrap .slideImg{
     transform: rotate(6deg);
-    width: 170%;
-    max-width: 170%;
+    width: 130%;
+    max-width: 130%;
     display: block;
     position: relative;
-    left: -20px;
+    left: -50px;
     top: 8px;
     animation: leftslide 3s linear infinite;
     /* animation: topslide 3s linear infinite; */
@@ -488,25 +479,27 @@ h1{
 }
 @-webkit-keyframes leftslide{
   from{
-    left: -20px;
-    top: 8px;
+    left: -50px;
+    top: -50px;
 
   }
   to{
-    left: -40px;
-    top: -8px;
+    left: -100px;
+    top: -70px;
 
   }
 
 }
 @keyframes leftslide{
   from{
-    left: 0;
-    top: 8px;
+    left: -50px;
+    top: -50px;
+
   }
   to{
-    left: -20px;
-    top: -8px;
+    left: -100px;
+    top: -70px;
+
   }
 
 }
@@ -523,7 +516,8 @@ h1{
   border-radius: 0;
   transform: none;
   animation: none;
-  width: 93%;
+  width: 100%;
+  height: 170px;
 }
 .fade .img-wrap .slideImg{
   transform: none;
@@ -546,6 +540,17 @@ h1{
 .intro{
   height: 100vh;
 }
+
+@media screen and (max-width:767px) { 
+
+ .intro{
+    height: 570px;
+ }
+ .intro .basic-heading {
+    top: 230px;
+}
+}
+
 
 /* parallax */
 
@@ -617,13 +622,28 @@ h1{
   margin: 1%;
 
 }
-.col-4 .img-wrap {
-    height: 140px;
-    overflow: hidden;
+
+.col-4 .img-wrap{
+  overflow: hidden;
+  border-radius: 50%;
+
 }
 .col-4 .img-wrap img{
-  width: 100%;
+    width: 100%;
+    transform-origin: center center;
+    animation: ripple 6s ease-in-out alternate infinite;
 }
+
+@keyframes ripple{
+  0%,
+  100%{
+    transform: skew(0deg, 0deg) scale(1.1,1.1);
+  }
+  50%{
+    transform: skew(2deg, 2deg) scale(1.1,1.1);
+  }
+}
+
 @media screen and (max-width:767px) { 
   .row{
     display: block;
@@ -704,4 +724,67 @@ small{
     transform: rotate(-15deg);
     /* transform-origin: 50% 50%; */
   }
+}
+
+.scroll{
+  display: none;
+}
+
+/* =====================
+  background for section
+===================== */
+
+.contents{
+    background-image: url(../images/backimg01.png),url(../images/backimg02.png);
+    background-size: 50px, 50px;
+    background-repeat: no-repeat, no-repeat;
+    background-position: bottom 20px left 40px, top 40px right 60px;
+    animation: kurageback 20s linear infinite;
+}
+
+@keyframes kurageback {
+
+  0% {
+    background-position: bottom -20px right -20px, bottom 40% left -60px;
+
+  }
+
+  50% {
+    background-position: top 50% right 100px, bottom 20% right 75%;
+  }
+
+  100% {
+    background-position: top -20px right -20px, bottom -50px right 80%;
+  }
+}
+
+#history.contents{
+    background-image: url(../images/backimg02.png),url(../images/backimg01.png);
+    background-size: 50px, 50px;
+    background-repeat: no-repeat, no-repeat;
+    background-position: bottom 20px left 40px, top 40px right 60px;
+    animation: kurageback02 20s linear infinite;
+}
+
+@keyframes kurageback02 {
+
+  0% {
+    background-position: top -20px right 60px, bottom 40% left -60px;
+
+  }
+
+  75% {
+    background-position: bottom 25% right 100px, bottom 85% right 75%;
+  }
+
+  100% {
+    background-position: bottom -20px right 40px, top -50px right 80%;
+  }
+}
+
+
+#wrapper {
+	background: url(../images/img02.jpg) no-repeat center center;
+  background-size: cover;
+  height: 300px;
 }

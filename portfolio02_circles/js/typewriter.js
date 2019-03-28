@@ -6,9 +6,17 @@ var dly = 300; // 次の文章までの待ち時間
 var count = 0;
 
 window.onload = function () {
-    kamikakushi();
-    countSet();
-    itimozi()
+    setTimeout(function () {
+        show();
+        kamikakushi();
+        countSet();
+        itimozi();
+
+    }, 3000);
+}
+
+function show() {
+    document.getElementsByClassName('scroll')[0].style.display = 'block';
 }
 
 function countSet() { // 文字数カウントの初期設定

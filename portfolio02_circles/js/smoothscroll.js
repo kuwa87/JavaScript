@@ -1,22 +1,24 @@
 // #にダブルクォーテーションが必要
-// $(function () {
-//     var headerHight = 0;
+//メニュー用
+$(function () {
+    var headerHight = 0;
 
-//     $('a[href^="#"]').click(function () {
+    $('a[href^="#"].menu-link').click(function () {
+        $("#nav-icon").toggleClass('open');
+        $("#nav-menu").toggleClass("open");
+        $("#navbar").toggleClass("open");
 
-//         $("#nav-menu").removeClass("open");
+        var speed = 2000;
+        var href = $(this).attr("href");
+        var target = $(href == "#" || href == "" ? 'html' : href);
+        var position = target.offset().top - headerHight;
+        $('body,html').animate({ scrollTop: position }, speed, 'swing');
 
-//         var speed = 400;
-//         var href = $(this).attr("href");
-//         var target = $(href == "#" || href == "" ? 'html' : href);
-//         var position = target.offset().top - headerHight;
-//         $('body,html').animate({ scrollTop: position }, speed, 'swing');
+        return false;
 
-//         return false;
+    });
 
-//     });
-
-// });
+});
 
 // #dive into the sea
 $(function () {
