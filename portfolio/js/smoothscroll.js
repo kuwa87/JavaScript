@@ -4,6 +4,7 @@ $(function () {
 
     $('a[href^="#"]').click(function () {
 
+        $("#nav-icon").removeClass("open");
         $("#nav-menu").removeClass("open");
 
         var speed = 400;

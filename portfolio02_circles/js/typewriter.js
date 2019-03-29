@@ -4,16 +4,21 @@ var txCount = [];
 var txSp = 100; // テキストの表示速度
 var dly = 300; // 次の文章までの待ち時間
 var count = 0;
+var x = window.matchMedia("(min-width: 768px)")
 
 window.onload = function () {
-    setTimeout(function () {
-        show();
-        kamikakushi();
-        countSet();
-        itimozi();
+    if (x.matches) {
 
-    }, 3000);
+        setTimeout(function () {
+            show();
+            kamikakushi();
+            countSet();
+            itimozi();
+
+        }, 3000);
+    }
 }
+
 
 function show() {
     document.getElementsByClassName('scroll')[0].style.display = 'block';

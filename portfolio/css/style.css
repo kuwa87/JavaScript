@@ -383,10 +383,13 @@ section h2 i.fas{
   width: 31%;
   word-wrap: break-word;
   cursor: pointer;
-  padding: 20px;
+  padding: 0;
   background: #fff;
   margin: 1%;
+}
 
+.text-content{
+  padding: 0 20px 20px;
 }
 
 @media screen and (max-width:767px) { 
@@ -577,6 +580,13 @@ flex-flow: row wrap;
 
 .event-list h4{
   margin-bottom: 20px;
+}
+
+.cal{
+  width: auto;
+  max-width: 700px;
+  display: block;
+  margin: 0 auto;
 }
 
 @media screen and (max-width:767px) { 
